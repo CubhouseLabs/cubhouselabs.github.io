@@ -193,6 +193,7 @@ main.in{transition:opacity .75s var(--ease),transform .9s var(--ease)}
 /* directory */
 .light{background:#F2F0EB;color:#0B0B0A}
 .light .lede{color:var(--mute-d)}
+.dir-pg{padding-top:clamp(190px,21vw,300px)}
 .dir{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:clamp(24px,4vw,72px);align-items:start;margin-top:clamp(56px,7vw,104px)}
 .az{position:sticky;top:120px;display:flex;flex-direction:column;align-items:flex-start}
 .az-b{position:relative;display:flex;align-items:center;height:24px;margin:0;padding:0 0 0 14px;background:none;border:0;font:inherit;font-size:13px;line-height:1;color:#0B0B0A;cursor:pointer;transition:color .4s var(--ease)}
@@ -220,8 +221,7 @@ main.in{transition:opacity .75s var(--ease),transform .9s var(--ease)}
 .su-stage:focus-visible{outline-offset:10px;border-radius:4px}
 .su-main{justify-self:center;max-width:100%;display:flex;flex-direction:column;gap:clamp(28px,3.4vw,52px);min-width:0}
 .su-h{margin:0;width:min-content;max-width:100%;font-weight:700;font-size:clamp(48px,7vw,116px);line-height:.92;letter-spacing:-.05em}
-.su-id{display:flex;flex-direction:column;gap:clamp(14px,1.4vw,20px)}
-.su-b{margin:0;display:flex;align-items:center;gap:10px;font-size:15px;color:var(--mute)}
+.su-b{margin:clamp(12px,2.2vw,32px) 0 0;display:flex;align-items:center;gap:10px;font-size:15px;color:var(--mute)}
 .su-dot{width:8px;height:8px;border-radius:50%;background:#F2F0EB;flex:none}
 .su-k{margin:0 0 14px;font-size:15px;color:var(--mute)}
 .su-f{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(8px,1vw,14px)}
@@ -377,6 +377,7 @@ a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   .hero-cta{order:4}
 
   .page{padding-top:128px}
+  .dir-pg{padding-top:156px}
   .apply{padding-top:128px}
   .statement{padding:96px var(--pad) 112px}
   .words{max-width:none;font-size:29px;line-height:1.14}
@@ -395,7 +396,7 @@ a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   .dir-g{scroll-margin-top:calc(100px + env(safe-area-inset-top,0px))}
   .su{--ls:clamp(200px,59vw,300px);grid-template-columns:minmax(0,1fr);row-gap:44px;align-content:center;padding:28px 0 8px}
   .su-stage{gap:20px}
-  .su-main,.su-id{align-items:center;text-align:center}
+  .su-main{align-items:center;text-align:center}
   .su-f li{font-size:26px}
   .aclock{width:88px;height:88px}
   .stack{margin-top:40px}
@@ -510,10 +511,9 @@ a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 </div>
 
 <div class="view light" data-view="directory">
-<section class="page"><div class="wrap">
+<section class="page dir-pg"><div class="wrap">
 <h1 class="h-page disp" data-reveal>Directory</h1>
-<p class="lede" data-reveal style="--d:.08s">Startups building at Cubhouse, A to Z.</p>
-<div class="dir" data-reveal style="--d:.16s">
+<div class="dir" data-reveal style="--d:.08s">
 <nav class="az" aria-label="Jump to a letter" data-az></nav>
 <div class="dir-list" data-dir></div>
 </div>
@@ -532,8 +532,9 @@ a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 <div class="su">
 <a class="su-stage" href="#" target="_blank" rel="noopener noreferrer" data-su-link data-reveal><img class="su-logo" data-su-logo alt="" decoding="async"><span class="su-visit"><span data-su-host></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a>
 <div class="su-main">
-<div class="su-id" data-reveal style="--d:.08s"><p class="su-b"><span class="su-dot" aria-hidden="true"></span><span data-su-batch></span></p><h1 class="su-h disp" data-su-name></h1></div>
+<h1 class="su-h disp" data-su-name data-reveal style="--d:.08s"></h1>
 <div data-reveal style="--d:.16s"><p class="su-k">Founded by</p><ul class="su-f disp" data-su-founders></ul></div>
+<p class="su-b" data-reveal style="--d:.24s"><span class="su-dot" aria-hidden="true"></span><span data-su-batch></span></p>
 </div>
 </div>
 </div></section>
