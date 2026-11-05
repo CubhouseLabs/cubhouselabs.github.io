@@ -218,8 +218,8 @@ main.in{transition:opacity .75s var(--ease),transform .9s var(--ease)}
 .su-visit{display:inline-flex;align-items:center;gap:8px;font-size:14px;transition:color .5s var(--ease)}
 .su-visit svg{width:12px;height:12px;flex:none;transition:transform .6s var(--ease)}
 .su-stage:focus-visible{outline-offset:10px;border-radius:4px}
-.su-main{display:flex;flex-direction:column;gap:clamp(28px,3.4vw,52px);min-width:0;padding-left:clamp(0px,3vw,56px)}
-.su-h{margin:0;font-weight:700;font-size:clamp(48px,7vw,116px);line-height:.92;letter-spacing:-.05em;text-wrap:balance}
+.su-main{justify-self:center;max-width:100%;display:flex;flex-direction:column;gap:clamp(28px,3.4vw,52px);min-width:0}
+.su-h{margin:0;width:min-content;max-width:100%;font-weight:700;font-size:clamp(48px,7vw,116px);line-height:.92;letter-spacing:-.05em}
 .su-k{margin:0 0 14px;font-size:15px;color:var(--mute)}
 .su-f{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(8px,1vw,14px)}
 .su-f li{font-size:clamp(26px,2.8vw,44px);line-height:1.15;letter-spacing:-.03em}
@@ -392,7 +392,7 @@ a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   .dir-g{scroll-margin-top:calc(100px + env(safe-area-inset-top,0px))}
   .su{--ls:clamp(200px,59vw,300px);grid-template-columns:minmax(0,1fr);row-gap:44px;align-content:center;padding:28px 0 8px}
   .su-stage{gap:20px}
-  .su-main{align-items:center;padding-left:0;text-align:center}
+  .su-main{align-items:center;text-align:center}
   .su-f li{font-size:26px}
   .aclock{width:88px;height:88px}
   .stack{margin-top:40px}
