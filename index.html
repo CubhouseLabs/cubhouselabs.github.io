@@ -239,12 +239,13 @@ main.in{transition:opacity .75s var(--ease),transform .9s var(--ease)}
 .xl:focus-visible .xl-a{width:.5em;margin-left:.2em;opacity:1}
 .xl:focus-visible .xl-a svg{transform:none}
 @media (hover:hover) and (pointer:fine){.xl:hover .xl-t::after{transform:scaleX(1)}.xl:hover .xl-a{width:.5em;margin-left:.2em;opacity:1;transition-delay:.09s}.xl:hover .xl-a svg{transform:none;transition-delay:.15s}}
-.bts{width:min(100%,clamp(420px,46%,720px));margin:clamp(48px,6vw,88px) 0 0 auto}
+.dir-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:40px 48px}
+.bts{width:min(100%,clamp(320px,34%,500px));margin:0}
 .bts-k{margin:0 0 14px;font-size:15px;color:var(--mute-d)}
 .bts-l{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line-d)}
 .bts-a{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 4px;border-top:1px solid var(--line-d);color:#0B0B0A;text-decoration:none}
 .bts-m{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 16px;min-width:0}
-.bts-t{font-weight:700;font-size:clamp(32px,4vw,60px);line-height:1;letter-spacing:-.045em;transition:transform .8s var(--ease-soft)}
+.bts-t{font-weight:700;font-size:clamp(30px,3.2vw,48px);line-height:1;letter-spacing:-.045em;transition:transform .8s var(--ease-soft)}
 .bts-n{font-size:15px;color:var(--mute-d)}
 .bts-a.is-soon{opacity:.38;cursor:default;user-select:none}
 .bts-a:focus-visible .bts-t{transform:translateX(12px)}
@@ -533,12 +534,14 @@ a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 
 <div class="view light" data-view="directory">
 <section class="page dir-pg"><div class="wrap">
+<div class="dir-head">
 <h1 class="h-page disp" data-reveal>Directory</h1>
+<section class="bts" data-reveal style="--d:.14s"><p class="bts-k">Batches</p><ul class="bts-l" data-bts></ul></section>
+</div>
 <div class="dir" data-reveal style="--d:.08s">
 <nav class="az" aria-label="Jump to a letter" data-az></nav>
 <div class="dir-list" data-dir></div>
 </div>
-<section class="bts" data-reveal style="--d:.14s"><p class="bts-k">Batches</p><ul class="bts-l" data-bts></ul></section>
 <div class="batch" data-reveal style="--d:.2s">
 <p class="batch-k"><span class="batch-dot" aria-hidden="true"></span>Next batch</p>
 <p class="batch-t disp">Spring ’27</p>
