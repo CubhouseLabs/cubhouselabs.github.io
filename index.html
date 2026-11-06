@@ -824,9 +824,9 @@ a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   }).join('');
   az.innerHTML='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(function(L){return '<button class="az-b" type="button" data-az-l="'+L+'"'+(groups[L]?'':' disabled')+'>'+L+'</button>'}).join('');
   d.querySelector('[data-bts]').innerHTML=BATCHES.map(function(b){
-    var t='<span class="bts-m"><span class="bts-t disp">Batch '+b.n+'</span><span class="bts-n">';
-    if(b.open){var c=inBatch(b.n).length;return '<li><a class="bts-a" href="#batch/'+b.n+'">'+t+c+(c===1?' startup':' startups')+'</span></span>'+rowArrow+'</a></li>'}
-    return '<li><div class="bts-a is-soon" aria-disabled="true">'+t+'Coming soon</span></span></div></li>';
+    var t='<span class="bts-m"><span class="bts-t disp">Batch '+b.n+'</span>';
+    if(b.open)return '<li><a class="bts-a" href="#batch/'+b.n+'">'+t+'</span>'+rowArrow+'</a></li>';
+    return '<li><div class="bts-a is-soon" aria-disabled="true">'+t+'<span class="bts-n">Coming soon</span></span></div></li>';
   }).join('');
   function renderBatch(n){
     var v=d.querySelector('[data-view="batch"]');
