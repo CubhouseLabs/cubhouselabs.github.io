@@ -215,7 +215,7 @@ main.in{transition:opacity .75s var(--ease),transform .9s var(--ease)}
 .su-pg{display:flex;min-height:100svh;padding-top:clamp(112px,9vw,140px)}
 .su-pg .wrap{flex:1;display:flex;flex-direction:column;width:100%}
 .su{--ls:clamp(190px,25vw,400px);flex:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(48px,8vw,160px);align-items:center}
-.su-stage{justify-self:center;display:flex;flex-direction:column;align-items:center;gap:clamp(24px,2.4vw,36px);max-width:100%;color:var(--mute);text-decoration:none}
+.su-stage{justify-self:center;display:flex;flex-direction:column;align-items:center;gap:clamp(24px,2.4vw,36px);max-width:100%;color:var(--mute);text-decoration:none;translate:calc(var(--dx,0) * var(--ls)) 0}
 .su-logo{display:block;width:calc(var(--ls) * var(--k,1));max-width:100%;height:auto;transition:transform .8s var(--ease-soft)}
 .su-visit{display:inline-flex;align-items:center;gap:8px;font-size:14px;transition:color .8s var(--ease-soft)}
 .su-visit svg{width:12px;height:12px;flex:none;transition:transform .8s var(--ease-soft)}
@@ -410,7 +410,7 @@ a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   .bts{width:100%}
   .bts-t{font-size:36px}
   .su{--ls:clamp(200px,59vw,300px);grid-template-columns:minmax(0,1fr);row-gap:44px;align-content:center;padding:28px 0 8px}
-  .su-stage{gap:20px}
+  .su-stage{gap:20px;translate:none}
   .su-main{align-items:center;text-align:center}
   .su-f li,.su-b{font-size:26px}
   .su-b .xl{min-height:44px}
@@ -806,7 +806,7 @@ a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   var STARTUPS=[
     {slug:'campus-creamery',batch:'0',name:'Campus Creamery',url:'https://thecampuscreamery.com/',host:'thecampuscreamery.com',logo:'logos/campus-creamery.png',w:1200,h:547,k:1.5,
       founders:[['James Rukin','29','https://www.linkedin.com/in/james-rukin-b534093a8/'],['Jei Han Hall','29','https://www.linkedin.com/in/jei-han-hall-washu2029/']]},
-    {slug:'nil-university',batch:'0',name:'NIL University',url:'https://playniluniversity.com/',host:'playniluniversity.com',logo:'logos/nil-university.webp',w:837,h:1000,k:.8,
+    {slug:'nil-university',batch:'0',name:'NIL University',url:'https://playniluniversity.com/',host:'playniluniversity.com',logo:'logos/nil-university.webp',w:837,h:1000,k:1,dx:.32,
       founders:[['Avery Wu','28','https://www.linkedin.com/in/avery-wu/']]},
     {slug:'pairyx',batch:'0',name:'Pairyx',url:'https://pairyx.co/',host:'pairyx.co',logo:'logos/pairyx.svg',w:995,h:1000,k:1,
       founders:[['Arjun Kalbag','29','https://arjunkalbag.xyz'],['Ethan Lassner','29','https://www.linkedin.com/in/ethanlassner/']]},
@@ -854,6 +854,7 @@ a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   function renderStartup(s){
     var v=d.querySelector('[data-view="startup"]'),img=v.querySelector('[data-su-logo]');
     v.querySelector('[data-su-link]').href=s.url;
+    v.querySelector('.su-stage').style.setProperty('--dx',s.dx||0);
     img.src=s.logo;img.width=s.w;img.height=s.h;img.alt=s.name+' logo';img.style.setProperty('--k',s.k);
     v.querySelector('[data-su-host]').textContent=s.host;
     v.querySelector('[data-su-name]').textContent=s.name;
